@@ -5,9 +5,11 @@ output:
   bookdown::html_document2:
     toc: true
     toc_depth: 2
+    bibliography: references.bib
   bookdown::pdf_document2:
     toc = true
     toc_depth: 2
+    bibliography: references.bib
 ---
 
 ```{r}
