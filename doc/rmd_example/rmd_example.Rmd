@@ -6,10 +6,13 @@ output:
     toc: true
     toc_depth: 2
     bibliography: references.bib
+    base_format: rticles::jss_article
   bookdown::pdf_document2:
     toc = true
     toc_depth: 2
     bibliography: references.bib
+    base_format: rticles::jss_article
+    
 ---
 
 ```{r}
