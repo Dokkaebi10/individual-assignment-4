@@ -33,7 +33,7 @@ The R programming language (R Core Team, 2019) and the following R packages were
 
 Results
 
-```{r}
+```{r horse-plot, echo=FALSE, out.width="80%", out.height="80%"}
 knitr::include_graphics("../../results/horse_pops_plot.png")
 ```
 
@@ -41,12 +41,14 @@ Figure 1: Horse populations for all provinces in Canada from 1906 - 1972
 
 We can see from Figure 1 that Ontario, Saskatchewan and Alberta have had the highest horse populations in Canada. All provinces have had a decline in horse populations since 1940. This is likely due to the rebound of the Canadian automotive industry after the Great Depression and the Second World War. An interesting follow-up visualisation would be car sales per year for each Province over the time period visualised above to further support this hypothesis.
 
+\@ref(fig:horse-plot)
+
 Suppose we were interested in looking in more closely at the province with the highest spread (in terms of standard deviation) of horse populations. We present the standard deviations here:
 
-```{r}
+```{r horse-sd, echo=FALSE, out.width="80%", out.height="80%"}
 horses_sd_table <- read_csv("../../results/horses_sd.csv")
 largest_sd <- horses_sd_table$Province[1]
-knitr::kable(horses_sd_table)
+knitr::kable(horses_sd_table, caption = "Standard Deviation of the Number of Horses")
 ```
 
 Note that we define standard deviation (of a sample) as
@@ -55,12 +57,28 @@ $$s = sqrt( sum_{i = 1}^n(x_i - \bar{x}) / (n-1))$$
 
 Additionally, note that in Table 1 we consider the sample standard deviation of the number of horses during the same time span as Figure1.
 
-```{r}
+\@ref(tab:horse-sd)
+
+```{r large-sd, echo=FALSE, out.width="80%", out.height="80%"}
 knitr::include_graphics("../../results/horse_pop_plot_largest_sd.png")
+```
+
+```{r include = FALSE}
+largest <- "Saskatchewan"
+# largest <- "Ontario"
+# largest <- "Alberta"
+# largest <- "Manitoba"
+# largest <- "Quebec"
+# largest <- "New Brunswick"
+# largest <- "Nova Scotia"
+# largest <- "British Columbia"
+# largest <- "P.E.I."
 ```
 
 Figure 2: Horse populations for the province with the largest standard deviation
 
-In Figure 2 we zoom in and look at the province of ?, which had the largest spread of values in terms of standard deviation.
+In Figure 2 we zoom in and look at the province of 'r largest', which had the largest spread of values in terms of standard deviation.
+
+\@ref(fig:large-sd)
 
 References
